@@ -1,9 +1,14 @@
-# api documentation for  [generator-gulp-angular (v1.1.1)](https://github.com/swiip/generator-gulp-angular#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-generator-gulp-angular.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-generator-gulp-angular) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-generator-gulp-angular.svg)](https://travis-ci.org/npmdoc/node-npmdoc-generator-gulp-angular)
+# npmdoc-generator-gulp-angular
+
+#### api documentation for  [generator-gulp-angular (v1.1.1)](https://github.com/swiip/generator-gulp-angular#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-generator-gulp-angular.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-generator-gulp-angular) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-generator-gulp-angular.svg)](https://travis-ci.org/npmdoc/node-npmdoc-generator-gulp-angular)
+
 #### Yeoman generator for AngularJS with Gulp
 
-[![NPM](https://nodei.co/npm/generator-gulp-angular.png?downloads=true)](https://www.npmjs.com/package/generator-gulp-angular)
+[![NPM](https://nodei.co/npm/generator-gulp-angular.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/generator-gulp-angular)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-generator-gulp-angular/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-generator-gulp-angular_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-generator-gulp-angular/build..beta..travis-ci.org/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-generator-gulp-angular/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-generator-gulp-angular/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-generator-gulp-angular/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-generator-gulp-angular/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-generator-gulp-angular/build/screenCapture.npmPackageListing.svg)
 
@@ -25,12 +30,10 @@
     "contributors": [
         {
             "name": "Matthieu Lux",
-            "email": "matthieu.lux@gmail.com",
             "url": "https://github.com/Swiip"
         },
         {
             "name": "Mehdy Dara",
-            "email": "mdara@eleven-labs.com",
             "url": "http://eleven-labs.com/"
         }
     ],
@@ -102,18 +105,15 @@
     "main": "index.js",
     "maintainers": [
         {
-            "name": "swiip",
-            "email": "matthieu.lux@gmail.com"
+            "name": "swiip"
         },
         {
-            "name": "zckrs",
-            "email": "mdara@eleven-labs.com"
+            "name": "zckrs"
         }
     ],
     "name": "generator-gulp-angular",
     "optionalDependencies": {},
     "preferGlobal": true,
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/swiip/generator-gulp-angular.git"
@@ -127,17 +127,6 @@
     "version": "1.1.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module generator-gulp-angular](#apidoc.module.generator-gulp-angular)
-1.  string <span class="apidocSignatureSpan">generator-gulp-angular.</span>app
-
-
-
-# <a name="apidoc.module.generator-gulp-angular"></a>[module generator-gulp-angular](#apidoc.module.generator-gulp-angular)
 
 
 
