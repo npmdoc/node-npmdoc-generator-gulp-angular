@@ -644,23 +644,18 @@ local.templateApidocHtml = '\
             // init moduleDict child
             local.apidocModuleDictAdd(options, options.moduleDict);
             // init moduleExtraDict
-            local.fs.readdirSync(options.dir).sort().forEach(function (file) {
-                if ((/^(?:\.git|node_modules|tmp)$/).test(file)) {
-                    return;
-                }
-                try {
-                    local.fs.readdirSync(options.dir + '/' + file)
-                        .sort()
-                        .forEach(function (file2) {
-                            file2 = file + '/' + file2;
-                            options.libFileList.push(file2);
-                        });
-                } catch (errorCaught) {
-                    options.libFileList.push(file);
-                }
-            });
             module = options.moduleExtraDict[options.env.npm_package_name] =
                 options.moduleExtraDict[options.env.npm_package_name] || {};
+            [1, 2, 3].forEach(function (depth) {
+                options.libFileList = options.libFileList.concat(
+                    toString(local.child_process.execSync('find "' + options.dir + '" -depth ' +
+                        depth + ' -name "*.js" -type f | sort | head -n 4096'))
+                        .split('\n')
+                        .map(function (file) {
+                            return file.replace(options.dir + '/', '');
+                        })
+                );
+            });
             options.libFileList.some(function (file) {
                 try {
                     tmp = {};
@@ -825,6 +820,7 @@ local.templateApidocHtml = '\
     /* istanbul ignore next */
     case 'node':
         // require modules
+        local.child_process = require('child_process');
         local.fs = require('fs');
         local.path = require('path');
         // run the cli
@@ -14162,23 +14158,8 @@ instruction\n\
                 mockDict = {};
                 Object.keys(tmp).forEach(function (key) {
                     if (typeof tmp[key] === 'function' && !(
-                            /^(?:fs\.Read|fs\.read|process\.binding)/
+                            /^(?:fs\.Read|fs\.read|process\.binding|process\.dlopen)/
                         ).test(element[1] + '.' + key)) {
-                        mockDict[key] = function () {
-                            return;
-                        };
-                        // coverage-hack
-                        mockDict[key]();
-                    }
-                });
-                mockList.push([ module, mockDict ]);
-            });
-            [
-                process
-            ].forEach(function (module) {
-                mockDict = {};
-                Object.keys(module).forEach(function (key) {
-                    if (typeof module[key] === 'function' && key !== 'binding') {
                         mockDict[key] = function () {
                             return;
                         };
