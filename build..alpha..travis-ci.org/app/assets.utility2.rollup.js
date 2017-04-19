@@ -648,8 +648,9 @@ local.templateApidocHtml = '\
                 options.moduleExtraDict[options.env.npm_package_name] || {};
             [1, 2, 3].forEach(function (depth) {
                 options.libFileList = options.libFileList.concat(
-                    toString(local.child_process.execSync('find "' + options.dir + '" -depth ' +
-                        depth + ' -name "*.js" -type f | sort | head -n 4096'))
+                    local.child_process.execSync('find "' + options.dir +
+                        '" -maxdepth ' + depth + ' -mindepth ' + depth +
+                        ' -name "*.js" -type f | sort | head -n 4096').toString()
                         .split('\n')
                         .map(function (file) {
                             return file.replace(options.dir + '/', '');
